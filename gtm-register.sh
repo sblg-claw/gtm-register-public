@@ -480,7 +480,8 @@ parse_args() {
       *) error "未知参数: $1" ;;
     esac
   done
-  [ -z "$MODE" ] && MODE="install"
+  if [ -z "$MODE" ]; then MODE="install"; fi
+  return 0
 }
 
 main() {
